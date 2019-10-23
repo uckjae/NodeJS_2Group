@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		/*  
+		function first() {
+			second();
+			console.log(1);
+		}
+		function second() {
+			third();
+			console.log(2);
+		}
+		function third() {
+			console.log(3);
+		}
+		first(); 
+		
+		
+		// console = 3 > 2 > 1 
+		 
+		function run() {
+			console.log("3초 후 실행");
+		}
+		console.log("시작");
+		setTimeout(run, 3000);
+		console.log("끝");
+		
+		// console = 시작, 끝, 3초후
+		 
+		function longRunningTask(){
+			 // 오래 걸리는 작업 (가정)
+			 console.log("작업 끝");
+		}
+		console.log("시작");
+		longRunningTask();
+		console.log("다음 해야할 작업");
+		
+		// console = 시작 > 작업끝 > 다음작업
+		// 오래걸리는 작업이 완료되기 전까지 다음 작업이 호출 되지 않는다
+		// 블로킹
+		 
+		function longRunningTask(){
+			 // 오래 걸리는 작업 (가정)
+			 console.log("작업 끝");
+		}
+		console.log("시작");
+		setTimeout(longRunningTask,0); // 코드를 논블로킹으로 만들기 위해 사용하는 기법
+		console.log("다음 해야할 작업");
+		 
+		//console = 시작 > 다음작업 > 작업끝
+		//논블로킹
+		//node에서는 주로 다른방법 사용 (책 3.4.3절 참조)
+		
+		// 호출스택 -> 백그라운드 -> 태스크 큐
+		
+		 
+			싱글 스레드 (블로킹) : 
+				한번에 하나의 작업만 받아서 처리 1:1 하나의 작업중에 뒤에 작업은 아무것도 하지못한다 (매우 비효율)
+			싱글 스레드 (논블로킹): 
+				한번에 여러 작업을 받아 한번에 처리 >> 1:N 여러 작업을 받아 한번에 처리 (한번에 많잉 양의 작업을 할 때 버거울 수 있음) *노드가 채택한 방식*
+			멀티스레드 (블로킹) : N:N 작업 처리에는 문제가 없으나 작업량이 늘수록 스레드가 같이 늘어나 작업량이 줄어도 놀고있는 점원이 생김
+		
+		
+		노드의 장단점
+		장점 : 
+			멀티 스레드 방식에 비해 자원을 절약
+			IO작업이 많은 서버에 적합
+			멀티스레드 방식보다 쉬움
+			웹서버 내장
+			자바스크립트 사용
+			JSON호환 쉬움
+		단점 : 
+			싱글 스레드라서 CPU코어를 하나만 사용
+			CPU작업이 많은 서버 부적합
+			스레드가 하나라서 멈추지 않게 관리해야함
+			서버 규모가 크면 관리 어려움
+			어준간함
+		 
+		 
+		 node 설치하기 
+		 LTS , Current 두가지 버전
+		 LTS는 기업을 위해 3년간 지원하는 버전 (짝수버전만) >> 최신기능을 사용할 수 없을 수 있음
+		 
+		 Current 최신기능 사용 가능 예상치 못한 에러 발생할 수 있음 (학습용 적합)
+		 
+		 설치 후 
+		node.js command prompt 실행
+		-> node -v 입력 (버전확인)
+		-> npm -v 입력 (버전확인)
+		에러 없이 성공적으로 버전 출력되면 설치 완료 
+		 */
+		  
+		//변수 const = 상수 개념 ? 초기화시 반드시 값 입력... 다른 값으로 다시 초기화할 수 없음
+		const a = 0;
+		//a = 1; //Uncaught TypeError: Assignment to constant variable.
+		
+		let n1 = 1;
+		let n2 = 2;
+		let result = 3;
+		let String = `${n1} 더하기 ${n2}는 "${result}"`;
+		console.log(String); // 1 더하기 2 는 "3" 
+		
+		//객체 리터럴
+		var sayNode = function(){
+			console.log('node');
+		};
+		var es = 'ES';
+		var oldObject = {
+			sayJS: function(){
+				console.log('JS');
+			},
+			sayNode: sayNode,
+		};
+		oldObject[es+6]='Fantastic';
+		
+		oldObject.sayNode(); //Node
+		oldObject.sayJS(); // JS
+		console.log(oldObject.ES6); // Fantastic
+		
+		//// 
+		const newObject = {
+				sayJS(){
+					console.log('JS');
+				},
+				sayNode, // 객체의 메소드에 함수를 연결할때 :과 function을 붙이지 않아도 됨
+				[es+6]: 'Fantastic',
+		};
+		
+		newObject.sayNode(); //Node
+		newObject.sayJS(); // JS
+		console.log(newObject.ES6); // Fantastic
+		
+		function add1(x,y){
+			return x + y;
+		}
+		const add2 = (x,y) => {
+			return x+y;
+		};
+		const add3 = (x,y) => x+y;
+		const add4 = (x,y) => (x+y);
+		
+		console.log(add1);
+		console.log(add2);
+		console.log(add3);
+		console.log(add4);
+		
+		function not1(x){
+			return !x;
+		}
+		const not2 = x => !x;
+		console.log(not1);
+		console.log(not2);
+		//????????????????????????????????????????
+				
+		var relationship1 = {
+				name: 'zero',
+				friends:['nero','hero','xero'],
+				logFriends: function(){
+					var that = this; //this = relationship1 that에 this 할당
+					this.friends.forEach(function(friend){
+						console.log(that.name, friend);
+					});		
+				},
+		};
+		relationship1.logFriends();
+		
+		const relationship2 = {
+				name:'zero',
+				friend: ['nero','hero','xero'],
+				logFriends(){
+					this.friends.forEach(friend => {
+						console.log(this.name, friend);
+					});
+				},
+		};
+		relationship2.logFriends();
+		
+		
+		
+</script>
+</head>
+<body>
+</body>
+</html>
