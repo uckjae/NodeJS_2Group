@@ -126,6 +126,7 @@ const array =[`nodejs`,{},10,true];
 const [node,obj, ,bool] = array; 
 
 //1.6 프로미스 
+//비동기 프로그래밍 >> 이전 콜백함수 >> ES6 프로미스 기반 
 const condition = true; //true면 resolve,false면 reject
 const promise = new Promise((resolve,reject) => {  //프로미스 생성 //resolve와 rejec를 매개변수로 갖는 콜백 함수 
     if(condition){
@@ -180,6 +181,8 @@ function findAndSaveUser(Users){
     });
 }
 
+//프로미스 여러개를 한번에 실행 
+//Promise.all << (이전)콜백 함수 중첩 사용 
 const promise1 = Promise.resolve('성공1');
 const promise2 = Promise.resolve('성공2');
 Promise.all([promise1,promise2])  //중첩 프로미스 사용 //all> 모두 resolve될떄까지 기다렸다가 then으로 넘어간다 
@@ -189,6 +192,7 @@ Promise.all([promise1,promise2])  //중첩 프로미스 사용 //all> 모두 res
 .catch((error) => {
     console.error(error);
 });
+
 //1.7 async/await 
 async function findAndSaveUser(Users){
 //const findAndSaveUser = async(Users) => {
@@ -203,21 +207,79 @@ try{
 }
 }
 
-//2.2 프런트엔드 자바스크립트 
+//2.1 ajax : 비동기적 웹 서비스 
 var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
+xhr.onreadystatechange = function() {   //onreadystatechange 사용하는 코드 
     if(xhr.readyState === xhr.DONE){
         if(xhr.status === 200 || xhr.status === 201){
-            console.log(xhr.responseText);
+        //    console.log(xhr.responseText);
         }else {
-            console.error(xhr.responseText);
+        //    console.error(xhr.responseText);
         }
     }
 };
+
 xhr.open('GET','https://www.zerocho.com/api/get'); 
 xhr.send();
+
+//onload와 onerror를 사용하는 코드 
+xhr.onload = function() {
+    if(xhr.status === 200 || xhr.status === 201){
+    //    console.log(xhr.responseText);
+    }
+};
+xhr.onerror = function() {
+  //  console.error(xhr.responseText);   
+};
+
+//서버로 데이터 같이 보내는 post 요청의 경우 , json 데이터 보낸다 
+var data = {
+    name:'zerocho',
+    birth:1994,
+};
+xhr.open('POST','https://www.zerocho.com/api/post/json');
+xhr.setRequestHeader('Content-Type','application/json');  //콘텐츠 타입을 json으로 
+//xhr.send(JSON.stringify(data)); //데이터를 동봉해 전송 
+
+//2.2 FormData 
+//HTML 태그의 데이터를 동적으로 제어 
+var formData = new FormData();
+formData.append('name','zerocho');
+formData.append('item','orange');
+formData.append('item','melon');
+formData.has('item');
+formData.has('money');
+formData.get('item');
+formData.getAll('item');
+formData.append('test',['hi','zero']);
+formData.get('test');
+formData.delete('test');
+formData.get('test');
+formData.set('item','apple');
+formData.getAll('item'); 
+
+xhr.onreadystatechange = function() {
+    if(xhr.readyState === xhr.DONE){
+    if(xhr.status === 200 || xhr.status === 201){
+           // console.log(xhr.responseText);
+        }else {
+           // console.error(xhr.responseText);
+        }
+    }
+};
+xhr.open('GET','https://www.zerocho.com/api/serach/' + encodeURIComponent('노드')); 
+xhr.send();
+
+//2.4 data attribute와 dataset 
+console.log(document.querySelector('li').dataset);
 </script>
 </head>
 <body>
+    <ul>
+        <li data-id="1" data-user-job="programmer">Zero</li>
+        <li data-id="2" data-user-job="designer">Nero</li>
+        <li data-id="3" data-user-job="programmer">Hero</li>
+        <li data-id="4" data-user-job="ceo">Kero</li>
+    </ul>
 </body>
 </html>
