@@ -35,7 +35,15 @@ FormData
 encodeURIComponent, decodeURIComponent
 - 주소에 한글이 포함된 경우를 처리하기 위해 사용한다.
 
-data attribute, dataset
-- data attribute의 장점은 자바스크립트로 쉽게 접근이 가능하다는 점
+data attribute
+- data attribute의 장점은 자바스크립트로 쉽게 접근이 가능하다
+```html
+<ul>
+    <li data-id="1" , data-user-job="programmer">Zero</li>
+</ul>
+```
+- data-id : id=1
+- data-user-job : userJob=programmer
+
 
 
