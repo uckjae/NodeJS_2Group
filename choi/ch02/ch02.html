@@ -168,6 +168,33 @@ xhr.onerror=function(){
 };
 xhr.open('GET','http://www.zerocho.com/api/get');
 xhr.send();
+//post요청
+var xhr = new XMLHttpRequest();
+var data={
+    name:'zerocho',
+    birth:1994,
+};
+xhr.onreadystatechange=function(){
+    if(xhr.readyState===xhr.DONE){
+        if(xhr.status===200||xhr.status===201){
+        console.log(xhr.responseText);
+        }else{
+            console.log(xhr.responseText);
+        }
+    }
+};
+xhr.open('POST','http://www.zerocho.com/api/post/json');
+xhr.setRequestHeader('Context-Type','application/json');
+xhr.send(JSON.stringify(data));
+
+//2.2.2 FormData
+//생략으로 대체, append-키하나에 여러개값 가능 , has-해탕키여부, get-키값가져오기, getall, delete, set-수정
+
+//2.2.3 encodeURIComponent -한굴주소 이해 못할시 사용
+
+//2.2.4 data attribute / dataset
+
+
 </script>
 </head>
 <body>
