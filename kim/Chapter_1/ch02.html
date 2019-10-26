@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+ 	-REPL-
+ 	Read : 입력한 코드를 읽음
+ 	Eval : 해석
+ 	Print : 결과물을 반환
+ 	Loop : 종료할 때 까지 반복
+ 	
+ 	-module-
+	모듈 : 특정한 기능을 하는 함수나 변수들의 집합
+	
+	- global-
+	global 객체 : 브라우저의 window와 같은 전역 객체입니다. 모든 파일에서 접근이 가능
+	노드에는 DOM이나 BOM이 없어 window, document 객체를 사용 할 수 없습니다.
+	
+	-console-
+	console : 디버킹을 위해 사용 
+	console.time(레이블) : console.timeEnd(레이블) 과 대응되어 같은 레이블을 가진 time과 timeEnd 사이의 시간을 측정
+	console.log(내용) : 평범한 로그를콘솔에 표시합니다. console.log(내용, 내용) 처럼 여러내용도 표시가능 
+	console.error(에러 내용) : 에러를 콘솔에 표시
+	console.dir(객체 , 옵션) : 객체를 콘솔에 표시할 때 사용합니다. 
+	console.trace(레이블) : 에러가 어디서 발생했는지 추적할 수 있음
+	
+	-Timer-
+	setTimeout(콜백 함수, 밀리초) : 주어진 밀리초 (1000분의 1초) 이후에 콜백 함수를 실행
+	setInterval(콜백함수, 밀리초) : 주어진 밀리초마다 콜백 함수를 반복 실행
+	setImmediate : 콜백 함수를 즉시 실행 
+	clearTimeout(아이디) : setTimeout을 취소 
+	clearInterval(아이디) : setInterval을 취소 
+	clearImmediate(아이디) : setImmediate을 취소 
+	
+	-Process-
+	Process : Process 객체는 현재 실행되고 있는 노드 프로세스에 대한 정보를 담고 있음
+	Process.env : 서비스의 중요한 키를 저장하는 공간
+	Process.exit(코드) : 실행중인 노드 프로세스를 종료
+	
+	-OS-
+	os.arch() : process.arch 와 동일 : 운영체제 비트 정보 확인
+	os.platform() : 플랫폼 확인 
+	os.type : 운영체제 종류 확인 
+	os.uptime() : 운영체제 부팅 이후 흐른시간 (초)를 보여줌 , process.uptime()는 노드의 실행시간 
+	os.homedir() : 홈 디렉터리 경로 확인
+	os.tmpdir() : 임시 파일 저장경로 확인
+	
+	-path-
+	path : 폴더와 파일의 경로를 쉽게 조작하도록 도와주는 모듈
+	path.sep : 경로의 구분자 window [ \ ] , POSIX [ / ]
+	path.delimiter : 환경변수의 구분자 window [ ; ] , POSIX [ : ]	
+	path.isAbsolute(경로) : 파일의 경로가 절대경로인지 상대경로인지 true , false로 확인
+	path.relative(기존경로 , 비교경로) : 경로 두개를 넣으면 첫 번째 경로에서 두 번째 경로로 가는법을 확인 
+	path.join(경로, ..) : 여러 인자를 넣으면 하나의 경로로 합침
+	
+	-URI-
+	URI : 인터넷 주소를 쉽게 조작하도록 도와주는 모듈
+	uri.parse(주소) : 주소를 분해
+	uri.format(객체) : WHATWG 방식의 uri과 기존 노드의 uri 모두 사용 가능 , 원래 상태로 조립 
+	append(키 ,값) : 해당키를 추가 , 같은 키의 값이 있다면 유지하고 하나 추가 
+	set(키 , 값) : append와 비슷하지만 같은 키의 값을 모두 지우고 새로 추가 
+	toString() : 조작한 searchParams 객체를 다시 문자열로 만듭니다.
+	querystring.parse(쿼리) : uri의 query 부분을 자바스크립트 객체로 분해
+	querystring.stringify(객체) : 분해된 query 객체를 문자열로 다시 조립해줍니다.
+	
+	-Crypto-
+	Crypto : 다양한 바익의 암호화를 도와주는 모듈
+	createHash(알고리즘) : 사용할 해시 알고리즘을 넣어줍니다.
+	update(문자열) : 변환할 문자열을 넣어줍니다
+	digest(인코딩) : 인코딩할 알고리즘을 넣어줍니다.
+	crypto.createCipher(알고리즘 , 키) : 암호화 알고리즘과 키를 넣어줍니다.
+	cipher.update(문자열 , 인코딩, 출력 인코딩) : 암호화할 대상과 대상의 인코딩, 출력결과물의 인코딩을 넣어줍니다.
+	cipher.final(출력 인코딩) : 출력 결과물의 인코딩을 넣어주면 암호화가 완료
+	crypto.createDecipher(알고리즘 , 키) : 복화하할때 사용
+	decipher.update(문자열, 인코딩, 출력 인코딩) : 암호화된 문장, 그 문장의 인코딩, 복호화할 인코딩을 넣어줍니다.
+	decipher.final(출력 인코딩) : 복호화 결과물의 인코딩을 넣음
+	
+	-Util-
+	Util : 각종 편의 기능을 모아둔 모듈
+	decrecated : 프로그래밍 용어로 , '중요도가 떨어져 더 이상 사용되지 않고 앞으로는 사라지게 된다' 라는 뜻이다.
+	util.deprecate : 함수가 deprecated 처리 되었음을 알려줍니다.
+	util.promisify : 콜백 패턴을 프로미스 패턴으로 바꿔줍니다. (프로미스를 알면 다시보기)
+	
+	-FS-
+	fs : 파일 시스템에 접근하는 모듈 , 파일을 생성 , 삭제 , 읽거나 쓸 수 있습니다. 폴더를 생성 , 삭제 
+	fs.access(경로 , 옵션, 콜백) : 폴더나 파일에 접근 할 수 있는지 체크
+	fs.open(경로, 옵션, 콜백) : 파일의 아이디(fd 변수)를 가졍는 메소드 
+	
+	-Buffer-
+	from(문자열) : 문자열을 버퍼로 바꿀 수 있음
+	toString(버퍼) : 버퍼를 다시 문자열로 바꿀 수 있음
+	concat(배열) : 배열 안에 든 버퍼들을 하나로 합침
+	alloc(바이트) : 빈 버퍼를 생성 
+	
+*/
+</script>
+</head>
+<body>
+		<!--  async.js
+		
+		const fs = require('fs');
+		
+		console.log('시작');
+		fs.readFile('./readme2.txt',(err, data) => {
+			if(err) {
+					thorw err;
+					}
+					console.log('1번' , data.toString());
+					});
+					fs.readFile('./readme2.txt', (err, data) => {
+						if(err) {
+							throw err;
+							}
+							console.log('2번',data.toString());
+							});
+							fs.readFile('./readme2.txt',(err, data) => {
+							if (err) {
+								throw err;
+								}
+								console.log('3번', data.toString());
+								});
+								console.log('끝'); 		
+		 -->
+		
+		<!--  sync.js
+			
+			const fs = require('fs');
+			
+			console.log('시작');
+			let data = fs.readFileSync('/readme2.txt');
+			console.log('1번', data.toString());
+			data = fs.readFileSync('./readme2.txt');
+			console.log('2번', data.toString());
+			data = fs.readFileSync('/readme2.txt');
+			console.log('3번', data.toString());
+			console.log('끝');
+		
+		
+		
+		
+		
+		
+		
+		-->
+		
+		
+		
+		
+</body>
+</html>
