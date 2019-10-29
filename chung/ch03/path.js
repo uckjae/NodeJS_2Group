@@ -15,4 +15,4 @@ console.log(`paht.parse(): ` , path.parse(string)); //경로
 console.log(`path.normalize() :` + path.normalize()); //정상경로로 변환 
 console.log(`path.isAbsolute() : `, path.isAbsolute(`C:\\`));  //경로
 console.log(`path.relative(): `, path.relative(`C:\\users`));
-console.log(`path.join():`, path.join(__dirname,`...`,`...`,`usrs`,`.`));
+console.log(`path.join():`, path.join(__dirname,`...`,`...`,`users`,`.`));
