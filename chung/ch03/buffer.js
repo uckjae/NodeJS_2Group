@@ -1,7 +1,15 @@
+//buffer 객체
+//from(문자열): 문자열 -> 버퍼
+//toString(버퍼) : 버퍼 -> 문자열
+//alloc(바이트): 빈 버퍼 생성
 const buffer = Buffer.from(`저를 버퍼로 바꿔보세요`);
 console.log(`from():`,buffer);
 console.log(`length:`,buffer.length);
 console.log(`toString():`,buffer.toString());
 
-const array = [Buffer.from(`띄엄`), Buffer.from(`띄엄`), Buffer.from(`띄어쓰기`)];
-const buffer2 = Buffer.concat(array);
+const array = [Buffer.from(`띄엄 `), Buffer.from(`띄엄 `), Buffer.from(`띄어쓰기`)];
+const buffer2 = Buffer.concat(array); // concat(배열)
+console.log(`concat():`,buffer2.toString());
+
+const buffer3 = Buffer.alloc(5);
+console.log('alloc():',buffer3);
