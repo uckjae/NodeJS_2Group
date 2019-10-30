@@ -2,33 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2aa7b3c4-36c3-42d6-9952-e676d2093fb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lee/ch3/async.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/asyncOrder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/buffer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/cipher.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/createReadStream.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/createWriteStream.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/readFile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/readme2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/readme3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/sync.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch3/writeFile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chung/ch03/error1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chung/ch03/error2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chung/ch03/error3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chung/ch03/event.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chung/ch03/copyFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/chung/ch03/copyFile.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,10 +48,8 @@
       <option name="presentableId" value="Default" />
       <updated>1572336457327</updated>
       <workItem from="1572336462080" duration="1128000" />
-      <workItem from="1572337601883" duration="4149000" />
-      <workItem from="1572349678358" duration="212000" />
-      <workItem from="1572349934750" duration="24000" />
-      <workItem from="1572360836588" duration="5886000" />
+      <workItem from="1572337601883" duration="4235000" />
+      <workItem from="1572393332190" duration="2277000" />
     </task>
     <task id="LOCAL-00001" summary="웹스톰으로 커밋하기">
       <created>1572336923463</created>
