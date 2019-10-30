@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2aa7b3c4-36c3-42d6-9952-e676d2093fb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/chung/ch03/error1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chung/ch03/error2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chung/ch03/error3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chung/ch03/event.js" afterDir="false" />
+    <list default="true" id="2aa7b3c4-36c3-42d6-9952-e676d2093fb7" name="Default Changelist" comment="웹스톰으로 커밋하기">
+      <change afterPath="$PROJECT_DIR$/lee/ch3/copyFile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch3/error1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch3/error2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch3/error3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch3/event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch3/fsCreate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch3/fsDelete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch3/gzip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch3/pipe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch3/readme4.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chung/ch03/copyFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/chung/ch03/copyFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lee/ch3/createWriteStream.js" beforeDir="false" afterPath="$PROJECT_DIR$/lee/ch3/createWriteStream.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,7 +35,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Web/WebJSP" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
