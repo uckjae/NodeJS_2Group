@@ -48,7 +48,7 @@
                 <span>Admin</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                <h6 class="dropdown-header">Login Screens:</h6>
+                <!-- <h6 class="dropdown-header">Login Screens:</h6> -->
                 <a class="dropdown-item" href="Admin_MemberList.jsp">Member</a>
             </div>
         </li>

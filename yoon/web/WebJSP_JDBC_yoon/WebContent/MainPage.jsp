@@ -17,11 +17,9 @@
         .headLine {
             font-weight: 700;
             text-align: center;
-
+			font-size: 4rem;	
             color: white;
             padding-top: 18%;
-            padding-top: 150px;
-            padding-bottom: 100px;
             font-style: italic;
             font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
