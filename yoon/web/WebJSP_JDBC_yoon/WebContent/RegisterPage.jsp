@@ -53,32 +53,48 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="form-label-group">
-                                                    <input type="number" id="age" name="age" class="form-control"
-                                                        placeholder="Age11" required="required">
-                                                    <label for="age">Age</label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="form-label-group">
                                                     <input type="email" id="email" name="email" class="form-control"
                                                         placeholder="Email" required="required">
                                                     <label for="email">Email</label>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label>
-                                                    Gender :
-                                                        <input type="radio" id="gender" name="gender" value="남"> 남
-                                                        <input type="radio" id="gender" name="gender" value="여"> 여
-                                                </label>
+                                                <div class="form-row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-label-group">
+                                                            <input type="number" id="age" name="age" class="form-control"
+                                                        placeholder="Age11" required="required">
+                                                    <label for="age">Age</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6" >
+                                                        <div class="form-radio">
+                                                            Gender : &nbsp;
+                                                            <div
+                                                                class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" class="custom-control-input"
+                                                                    id="gender" name="gender" value="남">
+                                                                <label class="custom-control-label"
+                                                                    for="gender">남</label>
+                                                            </div>
+                                                            <div
+                                                                class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" class="custom-control-input"
+                                                                    id="gender2" name="gender" value="여">
+                                                                <label class="custom-control-label"
+                                                                    for="gender2">여</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="form-row">
+                                            	<div class="col-md-6">
+                                                    <input type="reset" class="btn btn-danger btn-block" value="Cancel">
+                                                </div>
                                                 <div class="col-md-6">
                                                     <input type="submit" class="btn btn-primary btn-block"
                                                         value="Register">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="reset" class="btn btn-danger btn-block" value="Cancel">
                                                 </div>
                                             </div>
                                         </form>

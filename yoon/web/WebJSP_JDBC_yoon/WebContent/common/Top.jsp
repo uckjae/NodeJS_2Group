@@ -16,12 +16,6 @@ boolean isAdmin = false;
   %>
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <jsp:include page="HeadTag.jsp"></jsp:include>
-</head>
-
 <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
@@ -38,20 +32,21 @@ boolean isAdmin = false;
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 	<%if(isAdmin){ %>
-                    <a class="dropdown-item" href="Admin_MemberEdit.jsp">Edit</a>
+                    <a class="dropdown-item" href="Admin_MemberList.jsp">Member</a>
                     <div class="dropdown-divider"></div>
                      <%} %>
                      <%if(isLogin){ %>
-                    <a class="dropdown-item" href="Logout.jsp">Logout</a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">Logout</a>
                       <%}else{%>
                       <a class="dropdown-item" href="LoginPage.jsp">Login</a>
                       <%} %>
                 </div>
             </li>
         </ul>
-
     </nav>
-
+    
+    <!-- Logout Modal-->
+	<jsp:include page="../LogoutModal.jsp"></jsp:include>
 </body>
 
 </html>
