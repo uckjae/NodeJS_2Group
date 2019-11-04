@@ -33,13 +33,12 @@
                 <i class="fas fa-sign-in-alt"></i>
                 <span>Login</span></a>
         </li>
-        <%}%>
-        
-        <li class="nav-item">
+         <li class="nav-item">
             <a class="nav-link" href="RegisterPage.jsp">
                 <i class="fas fa-user-friends"></i>
                 <span>Register</span></a>
         </li>
+        <%}%>
         <%if(isAdmin){%>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
