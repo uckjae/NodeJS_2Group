@@ -4,7 +4,10 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <jsp:include page="./common/CheckAdmin.jsp"></jsp:include>
 
 <!DOCTYPE html>
@@ -39,7 +42,7 @@
 						conn = Singleton_Helper.getConnection("oracle");
 						String sql="select id, ip from koreamember";
 						pstmt = conn.prepareStatement(sql);
-						rs = pstmt.executeQuery(); 
+						rs=pstmt.executeQuery();
 				%>
                 <div class="card mb-3">
                     <div class="card-header">
@@ -59,7 +62,6 @@
                                     </thead>
                                     <tbody>
                                         <% while(rs.next()){%>
-                                        <tr>
                                             <td class="sorting_1">
                                                 <a
                                                     href="Admin_MemberDetail.jsp?id=<%= rs.getString("id") %>"><%= rs.getString("id") %></a>
