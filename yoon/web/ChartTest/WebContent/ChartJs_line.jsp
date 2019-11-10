@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>¼öµµ±Ç °ü±¤ Á¤º¸</title>
+<title>ìˆ˜ë„ê¶Œ ê´€ê´‘ ì •ë³´</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://www.chartjs.org/dist/2.9.2/Chart.min.js"></script>
 <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
@@ -17,9 +17,9 @@
 </style>
 <script type="text/javascript">
 	$(function() {
-		let cities = [ {name : "¼­¿ï", code : 1}
-					 ,{name : "°æ±âµµ", code : 31}
-					 ,{name : "ÀÎÃµ", code : 2}];
+		let cities = [ {name : "ì„œìš¸", code : 1}
+					 ,{name : "ê²½ê¸°ë„", code : 31}
+					 ,{name : "ì¸ì²œ", code : 2}];
 
 	 	let myKey = "o2dopDVzLQoFs5lEezEbhHtXdV5dzsM33ApDJHV5cQwaf3b8lc3d6EQZyiar3sm8uB60h53CrvB00yqzaoNt7g%3D%3D";
 
@@ -29,14 +29,14 @@
 				+ "&areaCode="+ cities[i].code
 				+ "&sigunguCode=&cat1=&cat2=&cat3=&listYN=Y&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&arrange=A&numOfRows=&pageNo=1";
 			
-			let category = [ { name : "°ü±¤Áö", id : 12 }
-							,{ name : "¹®È­½Ã¼³", id : 14 }
-							,{ name : "Çà»ç/°ø¿¬/ÃàÁ¦", id : 15 }
-							,{ name : "¿©ÇàÄÚ½º", id : 25 }
-							,{ name : "·¹Æ÷Ã÷", id : 28 }
-							,{ name : "¼÷¹Ú", id : 32 }
-							,{ name : "¼îÇÎ", id : 38 }
-							,{ name : "À½½ÄÁ¡", id : 39 }];
+			let category = [ { name : "ê´€ê´‘ì§€", id : 12 }
+							,{ name : "ë¬¸í™”ì‹œì„¤", id : 14 }
+							,{ name : "í–‰ì‚¬/ê³µì—°/ì¶•ì œ", id : 15 }
+							,{ name : "ì—¬í–‰ì½”ìŠ¤", id : 25 }
+							,{ name : "ë ˆí¬ì¸ ", id : 28 }
+							,{ name : "ìˆ™ë°•", id : 32 }
+							,{ name : "ì‡¼í•‘", id : 38 }
+							,{ name : "ìŒì‹ì ", id : 39 }];
 			
 			cities[i].category = category;
 
@@ -92,7 +92,7 @@
 						responsive: true,
 						title: {
 							display: true,
-							text: '¼öµµ±Ç °ü±¤ Á¤º¸'
+							text: 'ìˆ˜ë„ê¶Œ ê´€ê´‘ ì •ë³´'
 						},
 						tooltips: {
 							mode: 'index',
@@ -107,14 +107,14 @@
 								display: true,
 								scaleLabel: {
 									display: true,
-									labelString: 'Ä«Å×°í¸®'
+									labelString: 'ì¹´í…Œê³ ë¦¬'
 								}
 							}],
 							yAxes: [{
 								display: true,
 								scaleLabel: {
 									display: true,
-									labelString: '°¹¼ö'
+									labelString: 'ê°¯ìˆ˜'
 								}
 							}]
 						}
