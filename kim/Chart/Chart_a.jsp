@@ -13,12 +13,13 @@
 $(function(){
 	var car = [];
 	var city = [];
-	 $.getJSON("http://openapi.seoul.go.kr:8088/6b727477516368643733494e454d76/json/octastatapi255/1/12",function(data){
+	 $.getJSON("http://openapi.seoul.go.kr:8088/6b727477516368643733494e454d76/json/octastatapi255/1/26",function(data){
 		 $.each(data.octastatapi255.row,function(index,obj){
 			 console.log(data.octastatapi255.row[index].SOGYE_1);
-			 city.push(data.octastatapi255.row[index].JACHIGU);
-			 car.push(parseInt(data.octastatapi255.row[index].SOGYE_1));
+			 city.unshift(data.octastatapi255.row[index].JACHIGU);
+			 car.unshift(parseInt(data.octastatapi255.row[index].SOGYE_1));
 		 });
+		 car.pop();
 		 Highcharts.chart('container', {
 			  chart: {
 			    type: 'line'
