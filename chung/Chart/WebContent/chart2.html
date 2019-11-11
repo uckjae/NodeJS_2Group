@@ -9,14 +9,15 @@
 $(function() {
 	$.ajax({
 		url: "DomainTwo.do",
-		type : "get",
+		type : "post",
 		dataType :"json",
 			success :function(data){
+				console.log(data);
 			//	console.log(data.response.body.items.item);
                 var myItem = data.response.body.items.item;
 		  //  	$('#inside').text(data.response.body.items);
 		    //	console.log(data);
-					
+					var cnt12 = 0;
                     var cnt14 = 0;
                     var cnt15 = 0;
                     var cnt25 = 0;
@@ -25,26 +26,22 @@ $(function() {
                     var cnt38 = 0;
                     var cnt39 = 0;
                 for(var i=0; myItem.length; i++){
-                	var cnt12 = 0;
+                	
                     var output = '';
                  //   console.log(myItem.length);
                //     output +=  i + '번째 서울  데이터'+"<br>" ;                   
             //        output += myItem[i].addr1 +"<br>";
-                    output +=  myItem[i].contenttypeid +"<br>";
-                    
+                //    output +=  myItem[i].contenttypeid +"<br>";
+                //    console.log(myItem[i].contenttypeid);
                     if(myItem[i].contenttypeid === 12) {
-                    	cnt12++;
-                    	 console.log(cnt12);
+                    	cnt12++;               	
                     }
-                   
-                    
-           //         output += myItem[i].title+"<br>";
-            //        output += myItem[i].tel +"<br>";
                  //    document.body.innerHTML += output;
                      $("#inside").append(output);
                      
                 }
-                
+               
+                console.log(cnt12);
 		    },
 			error:function(xhr){
 				alert(xhr.status); //404 , 500
