@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <jsp:include page="./common/HeadTag.jsp"></jsp:include>
+    <c:import url="./common/HeadTag.jsp"/>
     <style type="text/css">
         .main {
             background-image: url(images/main.gif);
@@ -29,10 +30,10 @@
 
 <body id="page-top">
     <!-- Top -->
-    <jsp:include page="./common/Top.jsp"></jsp:include>
+    <c:import url="./common/Top.jsp"/>
     <div id="wrapper">
         <!-- Left Menu -->
-        <jsp:include page="./common/Left.jsp"></jsp:include>
+        <c:import url="./common/Left.jsp"/>
 
         <div id="content-main">
             <div class="container-fluid main">
@@ -40,7 +41,7 @@
             </div>
 
             <!-- Bottom -->
-            <jsp:include page="./common/Bottom.jsp"></jsp:include>
+             <c:import url="./common/Bottom.jsp"/>
         </div>
     </div>
 </body>

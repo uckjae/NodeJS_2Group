@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$.ajax( {
+		url: "DomainTwo.do",
+		type : "get",
+		dataType :"json",
+			success :function(data){
+				console.log(data.response.body.items.item);
+                var myItem = data.response.body.items.item;
+		  //  	$('#inside').text(data.response.body.items);
+		    //	var datalist = data.response.body;
+		    //	console.log(data);
+
+                for(var i=0; myItem.length; i++){
+                    var output = '';
+                    console.log(myItem.length);
+                    output +=  i + '번째 서울  데이터'+"<br>" ;                   
+                    output += myItem[i].addr1 +"<br>";
+                    output +=  myItem[i].contenttypeid +"<br>";
+                    output += myItem[i].title+"<br>";
+            //        output += myItem[i].tel +"<br>";
+                 //    document.body.innerHTML += output;
+                     $("#inside").append(output);
+                }
+		    },
+			error:function(xhr){
+				alert(xhr.status); //404 , 500
+			}	
+	}
+	);
+	
+	
+});
+
+</script>
+</head>
+<body>
+<div id="inside">
+
+</div>
+</body>
+</html>
