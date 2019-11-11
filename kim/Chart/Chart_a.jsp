@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script type="text/javascript">
 $(function(){
 	var car = [];
@@ -44,8 +46,9 @@ $(function(){
 			      dataLabels: {
 			        enabled: true
 			      },
-			      enableMouseTracking: false
+			      enableMouseTracking: true
 			    }
+			
 			  },
 			  series: [{
 			    name: '서울 자동차',
