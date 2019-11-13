@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <%
 	boolean isLogin=false;
 	boolean isAdmin=false;
@@ -55,6 +59,6 @@
     </ul>
     
     <!-- Logout Modal-->
-	<jsp:include page="../LogoutModal.jsp"></jsp:include>
+    <c:import url="LogoutModal.jsp"/>
 </body>
 </html>
