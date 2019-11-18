@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+
 <%
+/*
  String infoStr="";
 boolean isLogin = false;
 boolean isAdmin = false;
@@ -13,7 +16,30 @@ boolean isAdmin = false;
 	}else{
 		infoStr="로그인해주세요";
 	}
-  %>
+  */
+ %>
+
+<c:set var="userid" value="${sessionScope.userid}"/>
+<c:choose>
+	<c:when test="${userid != null}">
+		<c:set var="isLogin" value="true"/> 
+			<c:set var="infostr" value="${userid}"/>
+			<c:choose>
+				<c:when test="${userid == 'admin'}">
+					<c:set var="isAdmin" value="true"/> 
+				</c:when>
+				<c:otherwise>
+					<c:set var="isAdmin" value="false"/> 
+				</c:otherwise>
+			</c:choose>	
+	</c:when>
+	<c:otherwise>
+		<c:set var="infostr" value="로그인해주세요."/>
+		<c:set var="isLogin" value="false"/> 
+	</c:otherwise>
+</c:choose>
+
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -28,18 +54,23 @@ boolean isAdmin = false;
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="true">
                     <i class="fas fa-user-circle fa-fw"></i>
-                    <span id="info"><%=infoStr %></span>
+                    <span id="info">${infostr} </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                	<%if(isAdmin){ %>
+                
+                	<c:if test="${isAdmin == 'true'}">
                     <a class="dropdown-item" href="Admin_MemberList.jsp">Member</a>
                     <div class="dropdown-divider"></div>
-                     <%} %>
-                     <%if(isLogin){ %>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">Logout</a>
-                      <%}else{%>
-                      <a class="dropdown-item" href="LoginPage.jsp">Login</a>
-                      <%} %>
+                     </c:if>
+                     
+                     <c:choose>
+                     	<c:when test ="${isLogin == 'true'}"> 
+                     	 	<a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                     	</c:when>
+                     	<c:otherwise>
+                     	 	<a class="dropdown-item" href="LoginPage.jsp">Login</a>
+                     	</c:otherwise>                     
+                     </c:choose>
                 </div>
             </li>
         </ul>

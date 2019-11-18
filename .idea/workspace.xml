@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2aa7b3c4-36c3-42d6-9952-e676d2093fb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch4/server4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch4/server4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lee/ch4/server5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch4/cluster.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch4/server1-1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lee/ch4/server1-2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,7 +41,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="13.0.1" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.12.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -85,6 +84,7 @@
       <workItem from="1572393332190" duration="2395000" />
       <workItem from="1572706776697" duration="30000" />
       <workItem from="1572960883988" duration="7980000" />
+      <workItem from="1573086978867" duration="3444000" />
     </task>
     <task id="LOCAL-00001" summary="웹스톰으로 커밋하기">
       <created>1572336923463</created>
