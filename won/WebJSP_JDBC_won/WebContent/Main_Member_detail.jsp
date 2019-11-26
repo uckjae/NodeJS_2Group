@@ -87,7 +87,7 @@ tr:nth-child(even) {
 				try{
 					request.getParameter("email");
 					conn=Singleton_Helper.getConnection("oracle");
-					String sql="select email,pwd,name,age,gender from Team2member where email = '"+id+"'";
+					String sql="select email,pwd,name,age,gender from koreamember where email = '"+id+"'";
 					pstmt = conn.prepareStatement(sql);
 					rs = pstmt.executeQuery(); 
 			%>

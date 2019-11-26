@@ -20,7 +20,7 @@
 	
 	try{
 		conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","bituser","1004");
-		String sql="insert into Team2member(email,pwd,name,age,gender) values(?,?,?,?,?)";
+		String sql="insert into koreamember(email,pwd,name,age,gender) values(?,?,?,?,?)";
 		pstmt = conn.prepareStatement(sql);
 		
 		pstmt.setString(1, email);

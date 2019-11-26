@@ -20,7 +20,7 @@
 	PreparedStatement pstmt = null;
 	try{
 		conn = Singleton_Helper.getConnection("oracle");
-		String sql = "update Team2member set name=? , age=? , gender=? where email=?";
+		String sql = "update koreamember set name=? , age=? , gender=? where email=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, name);
 		pstmt.setInt(2, age);

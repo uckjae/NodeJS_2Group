@@ -55,8 +55,8 @@
 			ResultSet rs = null;
         	
 			conn = Singleton_Helper.getConnection("oracle");
-			String sql="select count(*) from Team2member where name like ?";
-			String sql2 ="select email, name, age from Team2member where name like '%"+name+"%'";
+			String sql="select count(*) from koreamember where name like ?";
+			String sql2 ="select email, name, age from koreamember where name like '%"+name+"%'";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, '%'+name+'%');

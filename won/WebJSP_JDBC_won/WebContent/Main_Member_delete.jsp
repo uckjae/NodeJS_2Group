@@ -18,7 +18,7 @@
 		request.getParameter("email");
 		conn=Singleton_Helper.getConnection("oracle");
 		// delete from koreamember where id = 'hong';
-		String sql="delete from Team2member where email = '"+id+"'";
+		String sql="delete from koreamember where email = '"+id+"'";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery(); 
 	}catch(Exception e){

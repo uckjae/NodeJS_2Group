@@ -70,7 +70,7 @@ tr:nth-child(even) {
 			
 			try{
 				conn=Singleton_Helper.getConnection("oracle");
-				String sql="select email, name from Team2member";
+				String sql="select email, name from koreamember";
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery(); 
         %>

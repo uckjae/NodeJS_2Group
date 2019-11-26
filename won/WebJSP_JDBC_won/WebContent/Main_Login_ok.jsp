@@ -16,7 +16,7 @@
 	
 	try{
 		conn=Singleton_Helper.getConnection("oracle");
-		String sql="select email, pwd from Team2member where email=?";
+		String sql="select email, pwd from koreamember where email=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1,email);
 		rs = pstmt.executeQuery(); 
